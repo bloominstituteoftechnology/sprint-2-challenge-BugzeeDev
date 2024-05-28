@@ -6,14 +6,40 @@
   <script id="challenge">
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
+       console.log(profile)
+       let result = {}
 
-    }
+       if (profile.active && reason) {
+        result.active = false
+        result.reason = reason
+        return result
+       }else if (!profile.active) {
+        result.active = true
+        return result
+       }else if (profile.active) {
+        return "confirm status manually"
+       }
+    }    
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
+     while (x < 1 || x > 3 && y < 1 || y > 3) {
+        return "invalid coordinates"
+      }
+    
+      // for (let i = 0; i < grid.length; i++) {
+      //   for (let n = 0; n < grid[i].length; n++) {
+      //        console.log(grid[i][n])
+      //     } 
+      //   }
+      }
+    
 
-    }
-
+      
+    
+    
+    
+    
     // 👉 CHALLENGE 3
     function booleanize(obj) {
 
