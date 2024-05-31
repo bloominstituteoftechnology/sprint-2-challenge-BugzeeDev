@@ -23,16 +23,40 @@
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
-    //  while (x < 1 || x > 3 && y < 1 || y > 3) {
+
+     x -= 1;
+     y -= 1;
+
+     if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length) {
+        return "invalid coordinates";
+    }
+    let resultBlue = "🟦 🥳";
+    let resultRed = "🟥 💀";
+
+    if (grid[y][x] === "🟦") {
+        return resultBlue;
+    } else if (grid[y][x] === "🟥") {
+        return resultRed;
+    }
+}
+
+    //  if (x < 1 || x > 3 && y < 1 || y > 3) {
     //     return "invalid coordinates"
     //   }
+
+      // let resultRed = "🟥 💀"
+      // let resultBlue = "🟦 🥳"
+
+      // for (let i = 0; i < grid.length; i++) {
+      //   for (let n = 0; n < grid[i].length; n++) {
+      //       if (grid[i][n] === "🟦") {
+      //         return resultBlue
+      //       }else if (grid[i][n] === "🟥") {
+      //         return resultRed
+      //       }
+      //     } 
+      //   }
     
-    //   // for (let i = 0; i < grid.length; i++) {
-    //   //   for (let n = 0; n < grid[i].length; n++) {
-    //   //        console.log(grid[i][n])
-    //   //     } 
-    //   //   }
-      }
        
      
     // 👉 CHALLENGE 3
@@ -62,7 +86,9 @@
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
-
+      return text.split(' ')
+      .map(word => forbidden.includes(word) ? 'x'.repeat(word.length) : word)
+      .join(' ')
     }
 
     // 👉 CHALLENGE 5 (bonus, NOT graded)
