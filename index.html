@@ -6,7 +6,7 @@
   <script id="challenge">
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
-       console.log(profile)
+       
        let result = {}
 
        if (profile.active && reason) {
@@ -23,27 +23,42 @@
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
-     while (x < 1 || x > 3 && y < 1 || y > 3) {
-        return "invalid coordinates"
+    //  while (x < 1 || x > 3 && y < 1 || y > 3) {
+    //     return "invalid coordinates"
+    //   }
+    
+    //   // for (let i = 0; i < grid.length; i++) {
+    //   //   for (let n = 0; n < grid[i].length; n++) {
+    //   //        console.log(grid[i][n])
+    //   //     } 
+    //   //   }
       }
-    
-      // for (let i = 0; i < grid.length; i++) {
-      //   for (let n = 0; n < grid[i].length; n++) {
-      //        console.log(grid[i][n])
-      //     } 
-      //   }
-      }
-    
-
-      
-    
-    
-    
-    
+       
+     
     // 👉 CHALLENGE 3
     function booleanize(obj) {
 
-    }
+      let nullValue = null
+      let zeroValue = 0
+      let oneValue = 1 
+      let maxChars = 9
+
+        for (let property in obj) {
+          if (obj.hasOwnProperty(property)) {
+            if (obj[property] === nullValue) {
+              delete obj[property]
+            }else if (obj[property] === zeroValue) {
+              obj[property] = false
+            }else if (property.length > maxChars){
+              return "shorten all prop names to 9 chars or less"
+            }else if (obj[property] === oneValue) {
+              obj[property] = true
+            }
+          }
+        }
+        return obj
+      }
+    
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
